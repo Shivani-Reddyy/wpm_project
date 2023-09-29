@@ -1,27 +1,27 @@
-extends layout
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
 
-include _includes/sharedHTMLfunctions
+legend {
+  font-family: 'Lobster', cursive;
+}
 
-block content
-  .row.banner
-    .col-12
-      h1= pageHeader.title
-        small &nbsp;#{pageHeader.strapLine}
+.navbar {
+  background-color: #ad1d28;
+  border-color: #911821;
+}
 
-  .row
-    .col-12.col-md-8
-      each location in locations
-        .card
-          .card-block
-            h4
-              a(href='/location')= location.name
-              +outputRating(location.rating)
-              span.badge.badge-pill.badge-default.float-right= location.distance
-            p.address= location.address
-            .facilities
-              each facility in location.facilities
-                span.badge.badge-warning= facility
+.navbar-light .navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
 
+.navbar-light .navbar-toggler {
+  color: white;
+  border-color: white;
+}
 
-    .col-12.col-md-4
-      p.lead= sidebar
+.navbar-light .navbar-toggler-icon {
+  background-image: url("<svg viewbox='0 0 30 30'xmlns='https://www.w3.org/2000/svg'><path stroke='white' stroke-width='2'stroke-linecap='round'stroke-miterlimit='10' d='M4 7h22M4 23h22'/></svg>")
+}
